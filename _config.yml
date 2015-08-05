@@ -1,0 +1,3 @@
+markdown: redcarpet
+baseurl: /min-side
+exclude: ['README.md']
