@@ -1,0 +1,138 @@
+---
+layout: default
+branche: hjemmepleje
+---
+
+		<div class="row">
+			<div class="sixteen columns clearfix">
+				<div class="breadcrumb">
+			        <a href="index.php" class="first_bc"><span>Hjem</span></a>
+			        <a href="referencer.php" class="last_bc"><span>Referencer</span></a>
+			    </div>
+			   
+				<div class="page_heading"><h1>Referencer</h1></div>
+			</div>
+		</div>	
+
+
+		<!-- Portfolio -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+		
+		        var $filterType = $('#portfolio_filter div.current').attr('data-value');
+		        var $holder = $('#portfolio_items');
+		        var $data = $holder.clone();
+		        var $preferences = {
+		            duration: 600,
+		            easing: 'easeInOutQuad'
+		        };
+				
+				$('#portfolio_filter > div').click(function(e){
+
+			          $('#portfolio_filter > div').removeClass('current');
+			          var $filterType = $(this).attr('data-value');
+
+			          $(this).addClass('current');
+		            
+			          if($filterType == 'all'){
+			          		var $filteredData = $data.find('li');
+			          }
+			          else{
+			          		var $filteredData = $data.find('li[data-type~=' + $filterType + ']');
+			          }
+			            
+			          $holder.quicksand($filteredData, $preferences);
+
+			     });
+			 
+			});
+		</script>
+
+
+		<div class="row">
+			<div class="portfolio sixteen columns">
+				<div id="portfolio_filter" class="portfolio_filter clearfix">
+					<span>Filter:</span><div data-value="all" class="current">Alle</div><div data-value="web-design">Kommuner</div><div data-value="graphic-design">Borgere</div>
+
+					<!-- Imidlertidig taget ud
+
+					<div data-value="web-development">Private firmaer</div>
+
+					-->
+				</div>
+	
+	 
+				<ul id="portfolio_items" class="clearfix">
+				  <li data-id="id1" class="portfolio_item" data-type="graphic-design">
+				  	<a href="#" rel="prettyPhoto" title="Jan Husted">
+				  		<span class="pic"><img src="../images/th_borger_33.jpg"/><div class="img_overlay"></div></span>
+				  		<h4>Jan Husted</h4>
+				  </li>
+				  <li data-id="id2" class="portfolio_item" data-type="graphic-design">
+				  	<a href="#" rel="prettyPhoto" title="Birger Hansen">
+				  		<span class="pic"><img src="../images/th_borger_11.jpg"/><div class="img_overlay"></div></span>
+				  		<h4>Birger Hansen</h4>
+				  	</a>
+				  </li>
+				  <li data-id="id3" class="portfolio_item" data-type="graphic-design">
+				  	<a href="#" rel="prettyPhoto" title="Lisbet Zorning">
+				  		<span class="pic"><img src="../images/th_borger_44.jpg"/><div class="img_overlay"></div></span>
+				  		<h4>Lisbet Zorning</h4>
+				  	</a>
+				  </li>
+				  <li data-id="id4" class="portfolio_item" data-type="graphic-design">
+				  	<a href="#" rel="prettyPhoto" title="Birthe Toftsø">
+				  		<span class="pic"><img src="../images/th_borger_55.jpg"/><div class="img_overlay"></div></span>
+				  		<h4>Birthe Toftsø</h4>
+				  	</a>
+				  </li>
+				  <li data-id="id5" class="portfolio_item" data-type="graphic-design">
+				  	<a href="referencer.php" rel="prettyPhoto" title="Annie Rud Egedahl">
+				  		<span class="pic"><img src="../images/th_borger_66.jpg"/><div class="img_overlay"></div></span>
+				  		<h4>Anni Rud Egedahl</h4>
+				  	</a>
+				  </li>
+				  <li data-id="id6" class="portfolio_item" data-type="graphic-design">
+				  	<a href="referencer.php" rel="prettyPhoto" title="Familien Amara">
+				  		<span class="pic"><img src="../images/th_borger_2.jpg"/><div class="img_overlay"></div></span>
+				  		<h4>Familien Amara</h4>
+				  	</a>
+				  </li>
+			
+				</ul>
+	
+			</div>
+		</div>
+		<!-- Portfolio::END -->
+
+				<!-- Clients Section-->
+		<div class="row">
+			<h2 class="title sixteen columns"><span>Samarbejdspartnere & kunder</span></h2>
+			<div class="clear"></div>
+			<div class="carousel_section clients_list">
+				<div class='carousel_arrows_bgr'></div>
+				<ul id="clients_carousel">
+					<li class="four columns"><a href="http://www.kk.dk/da/borger/omsorgogsaerligstoette/hjemmehjaelp" target="_blank"><img src="../images/Københavns-kommune-logo.png" alt="Københavns kommune logo"></a></li>
+					<li class="four columns"><a href="http://www.hvidovre.dk/Borger/Handicap/Hjaelp-i-hverdagen/Hjemmehjaelp.aspx" target="_blank"><img src="../images/Hvidovre-kommune-logo.png" alt="Hvidovre kommune logo"></a></li>
+					<li class="four columns"><a href="https://www.rk.dk/borger/socialservice/hjemmehjaelp/hjemmehjaelp-generelt/" target="_blank"><img src="../images/Rødovre-kommune-logo.png" alt="Rødovre kommune logo"></a></li>
+					<li class="four columns"><a href="http://www.vallensbaek.dk/service/aeldre-og-pleje/hjemmehjaelp" target="_blank"><img src="../images/Vallensbæk-kommune-logo.png" alt="Vallensbæk kommune logo"></a></li>
+					<li class="four columns"><a href="http://www.frederiksberg.dk/da/Borger/Aeldre/Hjemmehjaelp-og-sygepleje/Leverandoerer-af-hjemmehjaelp.aspx" target="_blank"><img src="../images/Frederiksberg-kommune-logo.png" alt="Frederiksberg kommune logo"></a></li>
+					<li class="four columns"><a href="http://www.gentofte.dk/Borger/Seniorer/Hj%C3%A6lp-og-pleje/Praktisk-hj%C3%A6lp/Hjemmehj%C3%A6lp-reng%C3%B8ring-indk%C3%B8b-t%C3%B8jvask" target="_blank"><img src="../images/Gentofte-kommune-logo.png" alt="Gentofte kommune logo"></a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+			    jQuery('#clients_carousel').jcarousel({
+			    	scroll: 1,
+			    	easing: 'easeInOutExpo',
+			    	animation: 600
+			    });
+			});	
+		</script>	
+		<!-- Clients Section::END-->
+	
+	</div>
+	
+<?php include('inc/footer.php'); ?>
