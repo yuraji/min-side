@@ -20,17 +20,13 @@
 
 	<!-- CSS
   ================================================== -->
-	<link rel="stylesheet" href="stylesheets/skeleton.css">
-	<link rel="stylesheet" href="stylesheets/style.css">
 	<link rel="alternate" href="www.human-care.nu" hreflang="da-dk" />
-
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600' rel='stylesheet' type='text/css'>	
-
-	<!--[if lt IE 9]><link rel="stylesheet" type="text/css" media="screen" href="stylesheets/sequencejs-theme.sliding-horizontal-parallax-ie.css" /><![endif]-->
-
-	<link rel="stylesheet" href="stylesheets/flexslider.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="stylesheets/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
-	<link rel="stylesheet" href="stylesheets/carousel.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="css/carousel.css" type="text/css" media="screen" />
 	
 	<!-- JS
   ================================================== -->	
@@ -61,159 +57,37 @@
 
 <body>
 	<div id="wrapper">
-	<div class="container">
-		<div class="header clearfix row">
-			<div class="eight columns header_left">
-				<a href="index.php"><img src="images/logo.png"/></a>
-			</div>
-			<div class="eight columns">
-				<div class="header_right">
-					<div class="header_contacts clearfix">
-						<div class="header_phone">+45 36166100</div>
-						<div class="header_mail">info@human-care.nu</div>
+		<div class="container">
+			<div class="header clearfix row">
+				<div class="eight columns header_left">
+					<a href="index.php"><img src="images/logo.png"/></a>
+				</div>
+				<div class="eight columns">
+					<div class="header_right">
+						<div class="header_contacts clearfix">
+							<div class="header_phone">+45 36166100</div>
+							<div class="header_mail">info@human-care.nu</div>
+						</div>
+						<div class="header_soc_search clearfix">			
+							<a href="" class="header_soc_rss" id="soc_rss">RSS</a>
+							<a href="https://twitter.com/HumanCareApS" target='_blank'  class="header_soc_twitter" id="soc_twitter">Twitter</a>
+							<a href="https://www.facebook.com/humancarenu?fref=ts" target='_blank'  class="header_soc_fb" id="soc_fb">Facebook</a>	
+						</div>				
 					</div>
-					<div class="header_soc_search clearfix">			
-						<a href="" class="header_soc_rss" id="soc_rss">RSS</a>
-						<a href="https://twitter.com/HumanCareApS" target='_blank'  class="header_soc_twitter" id="soc_twitter">Twitter</a>
-						<a href="https://www.facebook.com/humancarenu?fref=ts" target='_blank'  class="header_soc_fb" id="soc_fb">Facebook</a>	
-					</div>				
 				</div>
 			</div>
+			<!-- Main Navigation -->
+				{% include nav.html %}
+			<!-- Main Navigation::END -->
+
+			{{content}}
+
+			<!-- Main Navigation -->
+				{% include nav-footer.html %}
+			<!-- Main Navigation::END -->
+
 		</div>
-		<!-- Main Navigation -->
-		<div class="row no_bm">
-			<div class="dark_menu sixteen columns">
-				<div id="menu">
-					<ul>
-						<li><a href="{{site.baseurl}}/index.html"><span class="home_icon"></span></a></li>
-					  	<li><a href="index.html">Hjem<span></span></a>
-					    	<div>
-					          	<ul>
-							  		<li><a href="{{site.baseurl}}/om-os.html"><span>Om os</span></a></li>
-							  		<li><a href="{{site.baseurl}}/vision.html"><span>Vision</span></a></li>	
-								</ul>
-					       </div>
-					  	</li>
-					    <!--<li><a href="bpa.php"><span>BPA</span></a>
-					    	<div>
-					          	<ul>
-					          		<li><a href="bpa.php"><span>BPA</span></a></li>
-					          		<li><a href="#"><span>Ledsagerordning</span></a></li>
-					          		<li><a href="#"><span>Kvalitetssikring</span></a></li>
-					   			 	<li><a href="#"><span>Juridisk rådgivning</span></a></li>
-								</ul>
-					       </div>
-					    </li>-->
-					    <li><a href="{{site.baseurl}}/hjemmepleje.html">Hjemmehjælp<span></span></a>
-					    	<div>
-					          	<ul>
-							  		<li><a href="{{site.baseurl}}/hjemmepleje.html"><span>Hjemmepleje</span></a></li>
-							  		<li><a href="{{site.baseurl}}/paaroerende.html"><span>Pårørende</span></a></li>
-					    			<li><a href="{{site.baseurl}}/referencer.html"><span>Reference</span></a></li>
-								</ul>
-					       </div>
-					    </li>
-					  	<li><a href="{{site.baseurl}}/ydelser.html">Ydelser</a></li>
-					    <li><a href="{{site.baseurl}}/job.html">Job</a></li>
-					    <li><a href="{{site.baseurl}}/kontakt.html">Kontakt os</a></li>
-					    <li><a href="#">Login<span></span></a>
-							<div>
-					          	<ul>
-							  		<li><a href="{{site.baseurl}}/login_hj.html"><span>Hjælper</span></a></li>
-							  		<li><a href="{{site.baseurl}}/login_kontor.html"><span>Kontor</span></a></li>
-								</ul>
-					       </div>
-					    </li>
-					</ul>
-				</div>			
-				<select id="select_menu" onchange="location = this.value">
-			  		<option value="">Vælg side</option>
-			        <option value="{{site.baseurl}}/index.html">Hjem</option>			        
-			        <option value="{{site.baseurl}}/hjemmepleje.html">Hjemmepleje</option>
-			        <option value="{{site.baseurl}}/paaroerende.html">Pårørende</option>	
-			        <option value="{{site.baseurl}}/ydelser.html">Ydelser</option>
-			        <option value="{{site.baseurl}}/referencer.html">Referencer</option>	        
-			        <option value="{{site.baseurl}}/job.html">Job</option>    
-			        <option value="{{site.baseurl}}/kontakt.html">Kontakt os</option> 
-			        <option value="{{site.baseurl}}/om-os.html">Om os</option>   
-			        <option value="{{site.baseurl}}/login_hj.html">Hjælper login</option>  
-			        <option value="{{site.baseurl}}/login_kontor.html">Kontor login</option>  
-			    </select>
-						
-			</div>
-		</div>
-		<!-- Main Navigation::END -->
-
-
-
-
-{{content}}
-
-
-
-
-
-
-
-
-<!-- Footer -->
-	<div id="footer" class="container">
-		<div class="row footer_inside">
-		  <div class="four columns">
-		  	<div itemscope itemtype="http://schema.org/Product">
-		    <h3><span itemprop="name">Pleje i første klasse</span></h3>
-		    <p><span itemprop="description">Human Care gør alt for at skabe et trygt og rart hjem for hver enkel borger. Det gør vi mest af alt gennem nærvær og god kommunikation mellem hjælpere, kontor og borgere. Den personlige pleje og praktiske hjælp er vigtig for vores borgeres velbefindende.</span></p>
-		  </div>
-		</div>
-		  <div class="four columns">
-		    <h3 class="margined_left">Menu</h3>
-		    <ul class="margined_left">
-		    	<li><a href="index.php">Hjem</a></li>
-		    	<li><a href="hjemmepleje.php">Hjemmepleje</a></li>
-		    	<li><a href="ydelser.php">Ydelser</a></li>
-		    	<li><a href="referencer.php">Referencer</a></li>
-		    	<li><a href="job.php">Job</a></li>
-		    	<li><a href="kontakt.php">Kontakt os</a></li>
-		    </ul>
-		  </div>
-
-		  <div class="four columns" itemscope itemtype="http://schema.org/Organization">
-		  	<span itemprop="name"><h3>Human Care Nord</h3></span>
-		  	<div class='icon_phone' title='Phone'><span itemprop="telephone">+45 36 16 61 00</span></div>
-		    <div class='icon_mail' title='Email'><span itemprop="email">info@human-care.nu</span></div>	
-		    <div class='icon_loc' title='Location' itemscope itemtype="http://schema.org/PostalAddress">
-		    	<span itemprop="streetAddress">Gydevang 39-41</span>, <br>
-		    	<span itemprop="postalCode">3450</span>
-		    	<span itemprop="addressLocality">Allerød</span>
-		    </div>		    
-		  	<div class='clear'></div>
-		  	<div class='h10'></div>
-		  </div> 
-		  <div class="four columns" itemscope itemtype="http://schema.org/Organization">
-		  	<span itemprop="name"><h3>Human Care Hovedafdeling</h3></span>
-		  	<div class='icon_phone' title='Phone'><span itemprop="telephone">+45 36 16 61 00</span></div>
-		    <div class='icon_mail' title='Email'><span itemprop="email">info@human-care.nu</span></div>	
-		    <div class='icon_loc' title='Location' itemscope itemtype="http://schema.org/PostalAddress">
-		    	<span itemprop="streetAddress">Hvidovrevej 350A</span>, <br>
-		    	<span itemprop="postalCode">2650</span> 
-		    	<span itemprop="addressLocality">Hvidovre</span>
-		    </div>	   
-		  	<div class='clear'></div>
-		  	<div class='h10'></div>
-		  </div> 
-	  </div> 
-	  <div class="clear"></div>
-	  <div class="footer_btm">
-	  	<div class="footer_btm_inner">
-	      	<a href='https://twitter.com/humancareaps' target='_blank' class='icon_tweet' title='Tweeter'>Tweeter</a>    	  	
-		  	<a href='https://plus.google.com/u/0/112025869894612140188/posts' target='_blank' class='icon_google' title='Google+'>Google+</a>
-		  	<a href='https://www.facebook.com/humancarenu?fref=ts' target='_blank' class='icon_facebook' title='Facebook'>Facebook</a>  
-		  	<div id="powered"><a href="" target="_blank">Human Care Copyright</a> © <? echo date(Y); ?> &nbsp; | &nbsp; <a href="" target="_blank">Wundersen Design</a></div>
-		</div>	  
-	  </div>
 	</div>
-	<!-- Footer::END -->
-	
-  </div>
+
 </body>
 </html>
