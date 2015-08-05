@@ -9,9 +9,9 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>Human Care - Privat hjemmehjælp</title>
-	<meta name="Keywords" content="Human Care, frit valg, privat, pleje, ældre, omsorg, pleje omsorg, ældreomsorg, ældrepleje, rengørings service, Hjemmehjælp, Hjemmeservice, ældre, handicaphjælp">
-	<meta name="Description" content="Vi yder hjemmehjælp i Allerød, Hillerød, Frederiksberg, Hvidovre, Rødovre, København og Vallensbæk kommuner samt i samarbejde med Human Care i Dragør og Gentofte kommuner. Human Care har de sideste 10 år været en del af fritvalgsordningen for flere kommuner. Vi har ydet personlig pleje og praktisk hjælp i døgnets 24 timer. Vores kerneværdier er netop dine behov for hjemmehjælp, hvor faste hjælpere og faste tider er en selvfølgelighed i Human Care. Respekten for dine ønsker og behov vil blive tilgodeset, hvor vi kun sender kvalificeret og uddannede hjælpere. Vi har også tæt kontakt til pårørende, da vi ved at det også skaber en tryghed for dem at deres kære er i trygge hænder. I modsætning til Kommuner kan vi også levere hjemmeservice døgnet rundt. "><meta name="Description" content="Vi yder hjemmehjælp i Allerød, Hillerød, Frederiksberg, Hvidovre, Rødovre, København og Vallensbæk kommuner samt i samarbejde med Human Care i Dragør og Gentofte kommuner.">
+	<title>{% if page.branche == "hjemmepleje" %}Human Care - Privat hjemmehjælp{% endif%}</title>
+	<meta name="Keywords" content="Human Care, Handicapservice, BPA, frit valg, privat, pleje, ældre, omsorg, pleje omsorg, ældreomsorg, ældrepleje, rengørings service, Hjemmehjælp, Hjemmeservice, ældre, handicaphjælp">
+	<meta name="Description" content="Vi yder handicaphjælp i København og omegn. Human Care har de sideste 10 år været en del af fritvalgsordningen for flere kommuner. Vi har ydet personlig pleje og praktisk hjælp i døgnets 24 timer. Vores kerneværdier er netop dine behov for plejen, hvor faste hjælpere og faste tider er en selvfølgelighed i Human Care. Respekten for dine ønsker og behov vil blive tilgodeset, hvor vi kun sender kvalificeret og uddannede hjælpere. Vi har også tæt kontakt til pårørende, da vi ved at det også skaber en tryghed for dem at deres kære er i trygge hænder. I modsætning til Kommuner kan vi også levere plejen døgnet rundt. Vi yder også hjælp til handicappede og borgere med en BPA. Vi har administreret hjælpeordninger for fysisk og psykisk handicappede siden 2008. Vi ansætter handicaphjælpere i hele Danmark og har over 100 medarbejdere i København og omegn."><meta name="Description" content="Vi yder hjemmehjælp i Allerød, Hillerød, Frederiksberg, Hvidovre, Rødovre, København og Vallensbæk kommuner samt i samarbejde med Human Care i Dragør og Gentofte kommuner.">
 	<meta name="google-site-verification" content="Q9cTiP-sED3wP74LgDm3XP_iWCa-g1MHd_tCLYUYWlU" />
 
 	<!-- Mobile Specific Metas
@@ -51,7 +51,7 @@
 
 	<!-- Favicons
 	================================================== -->
-	<link rel="shortcut icon" href="images/favicon.png">
+	<link rel="shortcut icon" href="../images/favicon.png">
 
 </head>
 
@@ -60,7 +60,7 @@
 		<div class="container">
 			<div class="header clearfix row">
 				<div class="eight columns header_left">
-					<a href="index.php"><img src="images/logo.png"/></a>
+					<a href="index.php"><img src="../images/logo.png"/></a>
 				</div>
 				<div class="eight columns">
 					<div class="header_right">
@@ -77,7 +77,9 @@
 				</div>
 			</div>
 			<!-- Main Navigation -->
-				{% include nav.html %}
+				{% if page.branche == "hjemmepleje" %}
+				{% include nav-hjemmepleje.html %}
+				{% endif %}
 			<!-- Main Navigation::END -->
 
 			{{content}}
