@@ -9,17 +9,17 @@ branche: hjemmepleje
 			{% for post in site.posts limit:1 %}
 			<div class="sixteen columns">			
 				<h1>{{post.title}}</h1>
-			</div>
-					<div class="pic blogbillede">
-						<a href="images/blog_img.jpg" rel="prettyPhoto" title="{{post.titel	}}"><img src="images/blog_img_700.jpg"/><div class="img_overlay_zoom"></div></a>
 
-					<div class="h20"></div>
 					<p class="post_meta">
 						<span class="calendar"><a href="">{{post.dato}}</a></span>
 						<span class="author"><a href="">{{post.forfatter}}</a></span>
 						<span class="comments"><a href="">3 Comments</a></span>
 						<span class="tags"><a href="">{{post.kategori}}</a></span>
 					</p>
+			<div class="h20"></div>
+			</div>
+					<div class="pic blogbillede">
+						<a href="images/blog_img.jpg" rel="prettyPhoto" title="{{post.titel	}}"><img src="images/blog_img_700.jpg"/><div class="img_overlay_zoom"></div></a>
 					</div>
 					
 					<script type="text/javascript" charset="utf-8">
