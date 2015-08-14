@@ -1,15 +1,90 @@
 ---
 layout: default
+branche: hjemmepleje
 ---
 
-
 		<div class="row">
-			<div class="portfolio sixteen columns">
-				<ul id="portfolio_items" class="clearfix">				
-					{% for post in site.posts %}
-						<li><a href=""></a>TEST</li>				
-					{% endfor %}
-				</ul>
+			<!-- Wide Column -->
+			<div class="sixteen columns">
+			{% for post in site.posts limit:1 %}
+					<div class="pic blogbillede">
+						<a href="images/blog_img.jpg" rel="prettyPhoto" title="{{post.titel	}}"><img src="images/blog_img_700.jpg"/><div class="img_overlay_zoom"></div></a>
+
+					<div class="h20"></div>
+					<p class="post_meta">
+						<span class="calendar"><a href="">{{post.dato}}</a></span>
+						<span class="author"><a href="">{{post.forfatter}}</a></span>
+						<span class="comments"><a href="">3 Comments</a></span>
+						<span class="tags"><a href="">{{post.kategori}}</a></span>
+					</p>
+					</div>
+					
+					<script type="text/javascript" charset="utf-8">
+						$(document).ready(function(){					
+							$(".pic a[rel^='prettyPhoto']").prettyPhoto({
+								animation_speed:'normal',
+								overlay_gallery: false, 
+								social_tools: false
+							});
+						});
+					</script>	
+	
+					<div class="post_description">
+						<h4>{{post.title}}</h4>
+						<p>
+						{{post.content}}
+						</p>							
+					</div>	
+	
 			</div>
-		</div>		
+			<div class="sixteen columns">
+			{% endfor %}				
+				<!-- Related Posts -->
+				
+				<h2 class="title mt50"><span>Andre blogs</span></h2>		
+				<div class="related_posts_section">
+					<div class='carousel_arrows_bgr'></div>
+					<ul id="related_posts_carousel">
+			{% for post in site.posts %}						
+						<li class="four columns">
+							<div class="pic">
+								<a href=""><img src="images/th1.jpg"/><div class="img_overlay"></div></a>
+							</div>
+							<p><strong class="blogbillede"><a href="">{{post.title}}</a></strong></p>
+							<div class="meta_date">{{post.dato}}</div> 
+							<p>Life is what happens to you while you're busy making other plans.</p>
+						</li>
+			{% endfor %}			
+					</ul>
+				</div>
+				
+						
+				<script type="text/javascript">
+					jQuery(document).ready(function() {
+					    jQuery('#related_posts_carousel').jcarousel({
+					    	scroll: ($(window).width() > 767 ? 3 : 1),
+					    	easing: 'easeInOutExpo',
+					    	animation: 600
+					    });
+					});	
+					
+					// Reload carousels on window resize to scroll only 1 item if viewport is small
+				    $(window).resize(function() {
+				    	 var el = $("#related_posts_carousel"), carousel = el.data('jcarousel'), win_width = $(window).width();
+				    	   var visibleItems = (win_width > 767 ? 3 : 1);
+				    	   carousel.options.visible = visibleItems;
+				    	   carousel.options.scroll = visibleItems;
+				    	   carousel.reload();
+				    });
+				</script>
+				
+				<!-- Related Posts::END -->
+
+			</div>
+			<!-- Wide Column::END -->
+
+				
+		</div>	
 	</div>
+	
+  </div>
