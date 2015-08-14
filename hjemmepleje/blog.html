@@ -7,6 +7,9 @@ branche: hjemmepleje
 			<!-- Wide Column -->
 			<div class="sixteen columns">
 			{% for post in site.posts limit:1 %}
+			<div class="sixteen columns">			
+				<h1>{{post.title}}</h1>
+			</div>
 					<div class="pic blogbillede">
 						<a href="images/blog_img.jpg" rel="prettyPhoto" title="{{post.titel	}}"><img src="images/blog_img_700.jpg"/><div class="img_overlay_zoom"></div></a>
 
@@ -30,11 +33,28 @@ branche: hjemmepleje
 					</script>	
 	
 					<div class="post_description">
-						<h4>{{post.title}}</h4>
+
 						<p>
-						{{post.content}}
+						{{ post.content}}
 						</p>							
 					</div>	
+
+				<!-- Disqus kommentar info@human-care.nu login -->
+					<div id="disqus_thread"></div>
+					<script type="text/javascript">
+					    /* * * CONFIGURATION VARIABLES * * */
+					    var disqus_shortname = 'human-care';
+					    
+					    /* * * DON'T EDIT BELOW THIS LINE * * */
+					    (function() {
+					        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+					        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					    })();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+			</div>
+			<!-- Disqus kommentar info@human-care.nu login -->
 	
 			</div>
 			<div class="sixteen columns">
@@ -52,7 +72,7 @@ branche: hjemmepleje
 							</div>
 							<p><strong class="blogbillede"><a href="">{{post.title}}</a></strong></p>
 							<div class="meta_date">{{post.dato}}</div> 
-							<p>Life is what happens to you while you're busy making other plans.</p>
+							<p>{{ post.content | strip_html | truncatewords:10}}</p>
 						</li>
 			{% endfor %}			
 					</ul>
@@ -80,7 +100,7 @@ branche: hjemmepleje
 				
 				<!-- Related Posts::END -->
 
-			</div>
+
 			<!-- Wide Column::END -->
 
 				
