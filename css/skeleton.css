@@ -35,7 +35,7 @@
     .container .one.columns                     { width: 40px;  }
     .container .two.columns                     { width: 100px; }
     .container .three.columns                   { width: 160px; }
-    .container .four.columns                    { width: 200px; } /*Ændret fra 220 til 200 for ellers fittede det ikke ind*/
+    .container .four.columns                    { width: 220px; } 
     .container .five.columns                    { width: 280px; }
     .container .six.columns                     { width: 340px; }
     .container .seven.columns                   { width: 400px; }
@@ -49,7 +49,7 @@
     .container .fifteen.columns                 { width: 880px; }
     .container .sixteen.columns                 { width: 940px; }
 
-    .container .one-third.column                { width: 280px; } /*Ændret fra 300 til 280 fordi ellers kunne det ikke passe*/
+    .container .one-third.column                { width: 300px; } 
     .container .two-thirds.column               { width: 620px; }
 
     /* Offsets */
