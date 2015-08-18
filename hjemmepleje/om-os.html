@@ -36,36 +36,19 @@ branche: hjemmepleje
 				});	
 		</script>			
 		<!-- Tooltip::END -->
-		
+
 		<div class="row team_block">
+
+		{% for kontor in site.data.kontor %}
 			<div class="four columns">
 				<div class="pic">
-					<img src="images/user.png"/>
-					<h4>Shahid Latif</h4>
-					<p class="team_desc">Afdelingsleder</p>
+					<img src="{{kontor.billed}}"/>
+					<h4>{{kontor.navn}}</h4>
+					<p class="team_desc">{{kontor.stilling}}</p>
 				</div>		
 			</div>
-			<div class="four columns">
-				<div class="pic">
-					<img src="images/user.png"/>
-					<h4>Svend Svendsen</h4>
-					<p class="team_desc">Kvalitets konsulent</p>
-				</div>		
-			</div>
-			<div class="four columns">
-				<div class="pic">
-					<img src="images/user.png"/>
-					<h4>Kristine Joy</h4>
-					<p class="team_desc">Administrativ leder</p>
-				</div>		
-			</div>
-			<div class="four columns">
-				<div class="pic">
-					<img src="images/user_annette.png"/>
-					<h4>Annette Lerche</h4>
-					<p class="team_desc">Kvalitetsmedarbejder</p>
-				</div>		
-			</div>
+	
+		{% endfor %}
 		</div>
 		
 			
@@ -89,7 +72,7 @@ branche: hjemmepleje
 						<li class="one-third column alpha">
 							<div class="testimonial_quote">
 	                            <div class="quote_content">
-	                                <p>Vi er tilhænger af KISS modellen. Keep It Simple & Stupid. Dette har vi stor succes med og det har betydet enormt kvalitetsløft i alle afdelinger.</p>
+	                                <p>Vi er tilhænger af KISS modellen. Keep It Simple, Stupid. Dette har vi stor succes med og det har betydet enormt kvalitetsløft i alle afdelinger.</p>
 	                                <span class="quote_arrow"></span>
 	                            </div>
 	                            <div class="quote_author"><div class="icon_testimonial">KISS</div><span class="quote_author_description">Modellen</span>
@@ -137,84 +120,4 @@ branche: hjemmepleje
 
 </div>
 </div>
-		
-
-	<!--	
-		<div class="row">
-			<h2 class="title sixteen columns"><span>Our Portfolio</span></h2>
-			<div class="clear"></div>
-			<div class="carousel_section">
-				<div class='carousel_arrows_bgr'></div>
-				<ul id="portfolio_carousel">
-					<li class="four columns portfolio_item">
-						<a href="portfolio_item_gallery.html" rel="prettyPhoto" title="Custom Design">
-					  		<span class="pic"><img src="images/th3_7.jpg"/><div class="img_overlay"></div></span>
-					  		<h5>Custom Design</h5>
-					  	</a>
-					</li>
-					<li class="four columns portfolio_item">
-						<a href="portfolio_item.html" rel="prettyPhoto" title="Custom Design">
-					  		<span class="pic"><img src="images/th3_3.jpg"/><div class="img_overlay"></div></span>
-					  		<h5>Bespoke Business Solution</h5>
-					  	</a>
-					</li>
-					<li class="four columns portfolio_item">
-						<a href="portfolio_item.html" rel="prettyPhoto" title="Custom Design">
-					  		<span class="pic"><img src="images/th3_4.jpg"/><div class="img_overlay"></div></span>
-					  		<h5>Custom Design</h5>
-					  	</a>
-					</li>
-					<li class="four columns portfolio_item">
-						<a href="portfolio_item.html" rel="prettyPhoto" title="Custom Design">
-					  		<span class="pic"><img src="images/th3_1.jpg"/><div class="img_overlay"></div></span>
-					  		<h5>Custom Plugin Development</h5>
-					  	</a>
-					</li>
-					<li class="four columns portfolio_item">
-						<a href="portfolio_item.html" rel="prettyPhoto" title="Custom Design">
-					  		<span class="pic"><img src="images/th3_6.jpg"/><div class="img_overlay"></div></span>
-					  		<h5>Website Redesign</h5>
-					  	</a>
-					</li>
-					<li class="four columns portfolio_item">
-						<a href="portfolio_item.html" rel="prettyPhoto" title="Custom Design">
-					  		<span class="pic"><img src="images/th3_2.jpg"/><div class="img_overlay"></div></span>
-					  		<h5>Online Store Design</h5>
-					  	</a>
-					</li>
-					<li class="four columns portfolio_item">
-						<a href="portfolio_item.html" rel="prettyPhoto" title="Custom Design">
-					  		<span class="pic"><img src="images/th3_8.jpg"/><div class="img_overlay"></div></span>
-					  		<h5>Template Design</h5>
-					  	</a>
-					</li>				
-				</ul>
-			</div>
-		</div>
-		
-		<script type="text/javascript">
-			jQuery(document).ready(function() {
-			    jQuery('#portfolio_carousel').jcarousel({
-			    	scroll: ($(window).width() > 767 ? 4 : 1),
-			    	easing: 'easeInOutExpo',
-			    	animation: 600
-			    });
-			});	
-			
-			
-			// Reload carousels on window resize to scroll only 1 item if viewport is small
-		    $(window).resize(function() {
-		    	 var el = $("#portfolio_carousel"), carousel = el.data('jcarousel'), win_width = $(window).width();
-		    	   var visibleItems = (win_width > 767 ? 4 : 1);
-		    	   carousel.options.visible = visibleItems;
-		    	   carousel.options.scroll = visibleItems;
-		    	   carousel.reload();
-		    });
-		</script>
-	</div>
-	<!-- Portfolio Items Section::END -->		
-	
-
-
-
 	<?php include('inc/footer.php'); ?>

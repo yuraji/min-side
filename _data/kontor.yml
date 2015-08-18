@@ -1,0 +1,33 @@
+---
+
+- navn: Shahid Latif
+  stilling: Afdelingsleder
+  billed: images/user.png
+
+- navn: Svend Svendsen
+  stilling: Kvalitets konsulent
+  billed: images/user.png
+
+- navn: Kristine Joy
+  stilling: Administrativ leder
+  billed: images/user.png
+
+- navn: Annette Lerche
+  stilling: Kvalitetsmedarbejder
+  billed: images/user_annette.png
+
+- navn: Sajid Latif
+  stilling: IT udvikler
+  billed: images/user.png
+
+- navn: Bitten Larsen
+  stilling: Kommune udbud ansvarlig
+  billed: images/user.png
+
+- navn: Farrah Latif
+  stilling: Løn og faktura ansvarlig
+  billed: images/user.png
+
+- navn: Afshan Latif
+  stilling: Vagtplanlægning
+  billed: images/user.png
