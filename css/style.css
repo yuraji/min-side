@@ -982,6 +982,7 @@ a:hover.header_soc_rss {
 	-webkit-border-radius: 3px;
 	-khtml-border-radius: 3px;
 	border-radius: 3px;
+
 }
 
 .blogbillede{
@@ -2818,3 +2819,5 @@ body {
 
     .responsive-container-sajid { position: relative; padding-bottom: 56%; padding-top: 0px; height: 0; overflow: hidden; }
 .responsive-container-sajid iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+
