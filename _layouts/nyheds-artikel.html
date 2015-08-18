@@ -1,22 +1,24 @@
 ---
 layout: default
-branche: handicap
+branche: hjemmepleje
 ---
+
 
 		<div class="row">
 			<!-- Wide Column -->
 			<div class="sixteen columns">
-			{% for post in site.posts limit:1 %}
-					<div class="pic blogbillede">
-						<a href="images/blog_img.jpg" rel="prettyPhoto" title="{{post.titel	}}"><img src="images/blog_img_700.jpg"/><div class="img_overlay_zoom"></div></a>
+			<div class="h20"></div>
+				<h1><a href="{{site.baseurl}}{{post.url}}">{{page.title}}</a></h1>
 
-					<div class="h20"></div>
 					<p class="post_meta">
-						<span class="calendar"><a href="">{{post.dato}}</a></span>
-						<span class="author"><a href="">{{post.forfatter}}</a></span>
+						<span class="calendar"><a href="">{{page.dato}}</a></span>
+						<span class="author"><a href="">{{page.forfatter}}</a></span>
 						<span class="comments"><a href="">3 Comments</a></span>
-						<span class="tags"><a href="">{{post.kategori}}</a></span>
+						<span class="tags"><a href="">{{page.kategori}}</a></span>
 					</p>
+			<div class="h20"></div>
+					<div class="pic blogbillede">
+						<a href="../../../images/blog_img.jpg" rel="prettyPhoto" title="{{page.title}}"><img src="../../../images/blog_img_700.jpg"/><div class="../../../img_overlay_zoom"></div></a>
 					</div>
 					
 					<script type="text/javascript" charset="utf-8">
@@ -30,15 +32,18 @@ branche: handicap
 					</script>	
 	
 					<div class="post_description">
-						<h4>{{post.title}}</h4>
+
 						<p>
-						{{post.content}}
+						{{ page.content}}
 						</p>							
 					</div>	
+
+				<!-- Disqus kommentar info@human-care.nu login -->
+					<!-- Indhent disqus fra hjememsiden -->
+				<!-- Disqus kommentar info@human-care.nu login -->
 	
 			</div>
-			<div class="sixteen columns">
-			{% endfor %}				
+			<div class="sixteen columns">				
 				<!-- Related Posts -->
 				
 				<h2 class="title mt50"><span>Andre blogs</span></h2>		
@@ -48,11 +53,11 @@ branche: handicap
 			{% for post in site.posts %}						
 						<li class="four columns">
 							<div class="pic">
-								<a href=""><img src="images/th1.jpg"/><div class="img_overlay"></div></a>
+								<a href="{{site.baseurl}}{{post.url}}"><img src="../../../images/th1.jpg"/><div class="../../../img_overlay"></div></a>
 							</div>
-							<p><strong class="blogbillede"><a href="">{{post.title}}</a></strong></p>
+							<p><strong class="blogbillede"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></strong></p>
 							<div class="meta_date">{{post.dato}}</div> 
-							<p>Life is what happens to you while you're busy making other plans.</p>
+							<p>{{ post.content | strip_html | truncatewords:10}}</p>
 						</li>
 			{% endfor %}			
 					</ul>
@@ -80,7 +85,7 @@ branche: handicap
 				
 				<!-- Related Posts::END -->
 
-			</div>
+
 			<!-- Wide Column::END -->
 
 				
