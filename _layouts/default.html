@@ -60,12 +60,7 @@
 		<div class="container">
 			<div class="header clearfix row">
 				<div class="eight columns header_left">
-					<a href="#"><img src="				
-						{% if page.branche == "hjemmepleje" %}
-						images/human-care-hjemmehjaelp-logo.png
-						{% else%}
-						images/human-care-handicap-logo.png
-						{% endif %}"></a>
+					<a href="#"><img src="{% if page.branche == 'hjemmepleje' %}{{site.baseurl}}/images/human-care-hjemmehjaelp-logo.png{% else%}{{site.baseurl}}/images/human-care-handicap-logo.png{% endif %}"></a>
 				</div>
 				<div class="eight columns">
 					<div class="header_right">
